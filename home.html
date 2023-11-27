@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"></style>
+    <script src="https://kit.fontawesome.com/2d2b6d6f2a.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Articulated Design Initiative (ADI)</a>
+        <div class="menu-btn">
+
+        </div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Explore</a>
+                <a href="#">Gallary</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <div class="slide active">
+            <img src="./lanja-house-articulated-design-initiative-adi_1.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="./lanja-house-articulated-design-initiative-adi_2.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="./lanja-house-articulated-design-initiative-adi_4.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="./lanja-house-articulated-design-initiative-adi_5.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="./lanja-house-articulated-design-initiative-adi_7.jpg" alt="">
+        </div>
+        <div class="content">
+            <h1>Lanja<br><span>House</span></h1>
+            <p>Located in the rural farmlands on the outskirts of Ratnagiri, the brief for this project was to create an ancestral home that blends in with the tranquil surroundings of Lanja. The idea was to build a place that would revive childhood nostalgia. A crucial aspect of the project was that it had to be budget-friendly.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="media-icons">
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-facebook"></i></a>
+            <a href=""><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <section class="post">
+        <div class="container">
+            <h3 class="section-title">Lanja House</h3>
+            <div class="content">
+                <div class="image">
+                    <img src="./adi-lanjahouse-detail-view-1.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h4 class="info-title">Structure</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, facere. Illo ex ducimus soluta, vero saepe perspiciatis iste corporis dolorem distinctio quo architecto. Sit totam nemo quibusdam non, repellendus placeat!</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <script>
+        ScrollReveal({
+            reset:true,
+            distance:'80px',
+            duration:2500,
+            delay:300
+        });
+        ScrollReveal().reveal('.section-title',{delay:500,origin:'bottom'})
+        ScrollReveal().reveal('.post .container .content .image, .post .container .content .info',{delay:300,origin:'right'})
+        ScrollReveal().reveal('.media-icons i',{delay:200 , interval:200})
+    </script>
+    <script>
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+        menuBtn.addEventListener("click" , ()=>{
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+        
+        const btns = document.querySelectorAll(".nav-btn");
+        const sliders = document.querySelectorAll(".slide");
+        var sliderNav = function(manual){
+            btns.forEach((btn)=>{
+                btn.classList.remove("active");
+            })
+            sliders.forEach((slide)=>{
+                slide.classList.remove("active");
+            })
+            btns[manual].classList.add("active");
+            sliders[manual].classList.add("active");
+        }
+
+        btns.forEach((btn,i) => {
+            btn.addEventListener("click" , ()=>{
+                sliderNav(i);
+            })
+        });
+    </script>
+</body>
+</html>
